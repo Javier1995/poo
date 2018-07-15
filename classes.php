@@ -1,6 +1,6 @@
 <?php 
 
-class Person
+Class Person
 {
 
     public $age;
@@ -25,3 +25,9 @@ $person = new Person('Javier', 20);
 echo $person->name;
 
 echo $person->run();
+
+$person2 = new Person('Cheo', 23);
+
+echo "<br />";
+echo $person2->name;
+echo $person2->run();
