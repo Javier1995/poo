@@ -2,12 +2,12 @@
 
 class MyProfile
 {
-    private $email = 'quiroga218@outlook.es';
-    private $name  = 'javier';
+    private    $email    = 'quiroga218@outlook.es';
+    private    $name     = 'javier';
     protected  $lastName = 'quiroga';
     public function __construct()
     {
-
+        
     }
     public function getEmail()
     {
