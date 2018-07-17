@@ -61,3 +61,5 @@ echo '<br/>';
 echo DBStatic::connect();
 echo '<br />';
 $inst = new MyProfile();
+
+echo 'Hola';
