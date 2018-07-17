@@ -39,7 +39,7 @@ class MyProfile extends BaseProfile
     } 
  
     public function getEmail()
-    {
+        
         return $this->email;
     }
 
