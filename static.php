@@ -2,17 +2,17 @@
 
 class DBStatic
 {
-    public static $db_user     = 'jquirogaa';
-    public static $db_password = 'te-130026';
-    public static $db_name     = 'hospital';
-    public static $db_port     = '5432';
-    public static function connect()
+    protected static $db_user     = 'jquirogaa';
+    protected static $db_password = 'te-130026';
+    protected static $db_name     = 'hospital';
+    protected static $db_port     = '5432';
+    protected static function connect()
     {
         echo "Conectando con :". self::$db_user. " : " . self::$db_password . " : " .self::$db_name . " : " . self::$db_port;
     }
 }
 
-class BaseProfile
+class BaseProfile extends DBStatic
 {
     protected $conection_data = "Conexion BD";
 
@@ -35,7 +35,8 @@ class MyProfile extends BaseProfile
 
     public function __construct()
     {
-       echo parent::connect2DB();
+        self::connect();
+       //echo parent::connect2DB();
     } 
  
     public function getEmail()
@@ -50,7 +51,7 @@ class MyProfile extends BaseProfile
     }
 }
 
-echo DBStatic::$db_name;
+/* echo DBStatic::$db_name;
 echo '<br>';
 echo DBStatic::$db_user;
 echo '<br>';
@@ -59,7 +60,8 @@ echo '<br>';
 echo DBStatic::$db_port;
 echo '<br/>';
 echo DBStatic::connect();
-echo '<br />';
+echo '<br />';*/
 $inst = new MyProfile();
 
-echo 'Hola';
+
+
