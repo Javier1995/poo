@@ -30,7 +30,8 @@ class Dog extends Animal
 }
 
 class Cat extends Animal
-{
+{   use myUtilities;
+    public $name = "Cocorito";
     public function makeSound()
     {
         echo "Miau\n";
@@ -42,7 +43,9 @@ interface iDB
     public function connect();
 }
 class MySQL implements iDB
-{
+{   
+    use myUtilities;
+    public $name = "MySQL ....";
     public function connect()
     {
         echo  "Conectando con MySQL\n";
@@ -66,3 +69,5 @@ $instOracle = new Oracle();
 
 $instDog->sayMyName();
 $instOracle->sayMyName();
+$instMySQL->sayMyName();
+$instCat->sayMyName();
