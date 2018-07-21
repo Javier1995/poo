@@ -1,5 +1,11 @@
 <?php
-
+trait myUtilities
+{
+    function sayMyName()
+    {
+        echo "My nombre es ". $this->name . "\n" ;
+    }
+}
 abstract class Animal
 {
     abstract public function makeSound();
@@ -11,7 +17,10 @@ abstract class Animal
 }
 
 class Dog extends Animal
-{
+{   
+    public $name = "Puqui"; 
+
+    use myUtilities;
     public function makeSound()
     {
         echo "Guau\n";
@@ -21,7 +30,8 @@ class Dog extends Animal
 }
 
 class Cat extends Animal
-{
+{   use myUtilities;
+    public $name = "Cocorito";
     public function makeSound()
     {
         echo "Miau\n";
@@ -33,7 +43,9 @@ interface iDB
     public function connect();
 }
 class MySQL implements iDB
-{
+{   
+    use myUtilities;
+    public $name = "MySQL ....";
     public function connect()
     {
         echo  "Conectando con MySQL\n";
@@ -41,23 +53,21 @@ class MySQL implements iDB
 }
 
 class Oracle implements iDB
-{
+{   
+    public $name = "Oracle .....";
+    use myUtilities;
     public function connect()
     {
         echo "Conectando con Oracle\n";
     }
 }
  
-/* $instDog = new Dog();
-$instDog->makeSound();
-
-$instDog->run();
-
+$instDog = new Dog();
 $instCat = new Cat();
-$instCat->makeSound();
-$instCat->run(); */
-
 $instMySQL  = new MySQL();
 $instOracle = new Oracle();
-$instMySQL->connect();
-$instOracle->connect();
+
+$instDog->sayMyName();
+$instOracle->sayMyName();
+$instMySQL->sayMyName();
+$instCat->sayMyName();
