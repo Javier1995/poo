@@ -3,7 +3,7 @@
 
 /* try{
   
-  throw new Exception("No hay excepciones");
+  //throw new Exception("No hay excepciones");
 
 }catch(Exception $e)
 {
@@ -23,9 +23,14 @@ class Main
     try
     {
       throw new DBException(" No hay conexion ");
+      //throw new Exception(" No hay conexion ");
+
     }catch(DBException $e)
     {
       echo 'Error especifico: '. $e->getMessage()."<br />";
+    }catch(Exception $e)
+    {
+      echo 'Error generico: '. $e->getMessage()."<br />";
     }
   }
 }
