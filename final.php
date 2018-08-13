@@ -38,3 +38,12 @@ class Cat extends Animal
     }
 }
 
+final class Schnauzer extends Dog
+{
+    public function __construct()
+    {
+        $this->breed = 'Schnauzer';
+    }
+}
+
+$instDog = new Schnauzer;
